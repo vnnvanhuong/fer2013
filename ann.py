@@ -16,7 +16,7 @@ print(y_train.shape)
 # plot_dataset(x_train, y_train)
 
 # pre-process
-n_train=500
+n_train=20000
 x_train, x_test = x_train[:n_train, :], x_train[n_train:,:]
 y_train, y_test = y_train[:n_train], y_train[n_train:]
 
