@@ -14,10 +14,10 @@ Source: https://www.kaggle.com/c/challenges-in-representation-learning-facial-ex
 
 ## Approach: ANN & CNN
 
-1 - Read train data (inputs, labels)
-2 - Create model with Keras
-3 - Train
-4 - Evaluation
+1. Read train data (inputs, labels)
+2. Create model with Keras
+3. Train
+4. Evaluation
 
 ## Run
 
