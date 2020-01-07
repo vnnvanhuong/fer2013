@@ -29,9 +29,9 @@ y_train, y_test = to_categorical(y_train, 7), to_categorical(y_test, 7)
 x_train = x_train.reshape((x_train.shape[0], 48, 48, 1)).astype('float32')
 x_test = x_test.reshape((x_test.shape[0], 48, 48, 1)).astype('float32')
 
-# normalize inputs from 0-255 to 0-1
-x_train = x_train / 255
-x_test = x_test / 255
+# normalize inputs
+x_train -= np.mean(x_train, axis=0)
+x_train /= np.std(x_train, axis=0)
 
 # create model
 model = Sequential()
