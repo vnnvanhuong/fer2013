@@ -19,7 +19,7 @@ print(y_train.shape)
 #plot_dataset(x_train, y_train)
 
 # pre-process
-n_train=20000
+n_train=28000
 x_train, x_test = x_train[:n_train, :], x_train[n_train:,:]
 y_train, y_test = y_train[:n_train], y_train[n_train:]
 
@@ -46,7 +46,7 @@ model.add(Dense(128, activation='relu'))
 model.add(Dense(7, activation='softmax'))
 
 model.compile(optimizer=Adam(lr=0.001), loss=mean_squared_error, metrics=['accuracy'])
-history = model.fit(x_train, y_train, batch_size=500, epochs=10, validation_data=(x_test, y_test))
+history = model.fit(x_train, y_train, batch_size=100, epochs=10, validation_data=(x_test, y_test))
 
 plot_training_history(history)
 	

@@ -3,16 +3,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def load_data():
-	train = pd.read_csv('train.csv', delimiter=',')
+	train = pd.read_csv('fer2013.csv', delimiter=',')
 
 	y_train = train['emotion'].to_numpy()
-	x_train = np.zeros((y_train.shape[0], 48,48), dtype=np.uint8)
+	x_train = np.zeros((y_train.shape[0], 48,48), dtype=np.float32)
 	
 	for i,row in train.iterrows():
-		pixels=np.asarray(list(row['pixels'].split(' ')),dtype=np.uint8)
+		pixels=np.asarray(list(row['pixels'].split(' ')),dtype=np.float32)
 		x_train[i] = pixels.reshape((48,48))
 	
 	return x_train, y_train
+
 
 def plot_dataset(x_train, y_train):
 	emotions = { 0: 'Angry', 1: 'Disgust', 2: 'Fear', 3: 'Happy', 4: 'Sad', 5: 'Surprise', 6: 'Neutral' }
@@ -26,7 +27,6 @@ def plot_dataset(x_train, y_train):
 	plt.show()
 
 def plot_training_history(history):
-  fig = plt.figure()
   plt.subplot(2,1,1)
   plt.plot(history.history['accuracy'])
   plt.plot(history.history['val_accuracy'])
