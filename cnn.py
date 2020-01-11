@@ -49,4 +49,11 @@ model.compile(optimizer=Adam(lr=0.001), loss=mean_squared_error, metrics=['accur
 history = model.fit(x_train, y_train, batch_size=100, epochs=10, validation_data=(x_test, y_test))
 
 plot_training_history(history)
-	
+
+
+# evalute trained model
+score = model.evaluate(x_test, y_test, verbose=0)
+print('--> Test loss: %.4f'% score[0])
+print('--> Test accuracy %.4f'% score[1])
+
+model.save('model.h5')

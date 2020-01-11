@@ -2,3 +2,4 @@ __pycache__/
 test.csv
 train.csv
 fer2013.csv
+model.h5
