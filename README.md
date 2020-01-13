@@ -12,7 +12,7 @@ This dataset was prepared by Pierre-Luc Carrier and Aaron Courville, as part of 
 
 Source: https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data
 
-## Approach: ANN & CNN
+## Approach
 
 1. Read train data (inputs, labels)
 2. Create model with Keras
@@ -25,6 +25,9 @@ Source: https://www.kaggle.com/c/challenges-in-representation-learning-facial-ex
 # install requirements
 pip install -r requirements.txt
 
-# ANN
-python ann.py
+# Train
+python train.py
+
+# Test
+python prediction.py
 ```
