@@ -38,15 +38,15 @@ model = Sequential()
 model.add(Conv2D(30, (3, 3), input_shape=(48, 48, 1), activation='relu'))
 model.add(MaxPooling2D())
 model.add(Conv2D(15, (3, 3), activation='relu'))
-# model.add(MaxPooling2D())
-# model.add(Dropout(0.2))
+model.add(Dropout(0.2))
+
 model.add(Flatten(input_shape=(48, 48)))
 model.add(Dense(128, activation='relu'))
-# model.add(Dense(50, activation='relu'))
+model.add(Dropout(0.2))
 model.add(Dense(7, activation='softmax'))
 
 model.compile(optimizer=Adam(lr=0.001), loss=mean_squared_error, metrics=['accuracy'])
-history = model.fit(x_train, y_train, batch_size=100, epochs=10, validation_data=(x_test, y_test))
+history = model.fit(x_train, y_train, batch_size=100, epochs=50, validation_data=(x_test, y_test))
 
 plot_training_history(history)
 
