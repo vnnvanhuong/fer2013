@@ -11,7 +11,7 @@ import numpy as np
 from utils import load_data, plot_dataset, plot_training_history
 
 # read dataset and split it into input set and labels set
-x_train, y_train = load_data();
+x_train, y_train = load_data()
 print(x_train.shape)
 print(y_train.shape)
 
